@@ -522,7 +522,7 @@ angular.module('AgavePlatformScienceAPILib').factory('FilesController', function
 
             //prepare query string for API call
             var baseUri = Configuration.BASEURI
-            var queryBuilder = baseUri + "/files/v2/listings/system/{systemId}/{path}";
+            var queryBuilder = baseUri + "/files/v2/index/system/{systemId}/{path}";
 
             //Process template parameters
             queryBuilder = APIHelper.appendUrlWithTemplateParameters(queryBuilder, {
