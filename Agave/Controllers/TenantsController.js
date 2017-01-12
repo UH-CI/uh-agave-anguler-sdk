@@ -22,13 +22,8 @@ angular.module('AgavePlatformScienceAPILib').factory('TenantsController', functi
             queryParameters = queryParameters || null;
 
             //prepare query string for API call
-<<<<<<< HEAD
             var baseUri = "https://agaveauth.its.hawaii.edu"
             var queryBuilder = baseUri + "/tenants/";
-=======
-            var baseUri = 'https://agaveapi.co';
-            var queryBuilder = baseUri + '/tenants/';
->>>>>>> master
 
             //Process query parameters
             queryBuilder = APIHelper.appendUrlWithQueryParameters(queryBuilder, {
