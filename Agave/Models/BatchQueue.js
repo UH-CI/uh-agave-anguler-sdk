@@ -162,9 +162,3 @@ BatchQueue.prototype.getName = function () {
 BatchQueue.prototype.setName = function (value) {
     this.name = value;
 }
-     
-
-
-
-
-

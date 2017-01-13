@@ -14,4 +14,3 @@ function HttpContext() {
     this.request = null;
     this.response = null;
 }
-

@@ -77,9 +77,3 @@ ClientRequest.prototype.getCallbackUrl = function () {
 ClientRequest.prototype.setCallbackUrl = function (value) {
     this.callbackUrl = value;
 }
-     
-
-
-
-
-

@@ -28,9 +28,3 @@ FileMkdirAction.prototype.getPath = function () {
 FileMkdirAction.prototype.setPath = function (value) {
     this.path = value;
 }
-     
-
-
-
-
-

@@ -111,9 +111,3 @@ MetadataSchema.prototype.getUuid = function () {
 MetadataSchema.prototype.setUuid = function (value) {
     this.uuid = value;
 }
-     
-
-
-
-
-

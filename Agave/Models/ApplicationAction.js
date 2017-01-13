@@ -26,9 +26,3 @@ ApplicationAction.prototype.getAction = function () {
 ApplicationAction.prototype.setAction = function (value) {
     this.action = value;
 }
-     
-
-
-
-
-

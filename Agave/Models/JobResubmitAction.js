@@ -29,9 +29,3 @@ JobResubmitAction.prototype.getAction = function () {
 JobResubmitAction.prototype.setAction = function (value) {
     this.action = value;
 }
-     
-
-
-
-
-

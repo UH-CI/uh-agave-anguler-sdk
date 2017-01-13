@@ -60,9 +60,3 @@ TransformRequest.prototype.getCallbackUrl = function () {
 TransformRequest.prototype.setCallbackUrl = function (value) {
     this.callbackUrl = value;
 }
-     
-
-
-
-
-

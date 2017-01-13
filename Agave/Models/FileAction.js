@@ -43,9 +43,3 @@ FileAction.prototype.getPath = function () {
 FileAction.prototype.setPath = function (value) {
     this.path = value;
 }
-     
-
-
-
-
-

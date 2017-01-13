@@ -60,9 +60,3 @@ Notification.prototype.getUrl = function () {
 Notification.prototype.setUrl = function (value) {
     this.url = value;
 }
-     
-
-
-
-
-

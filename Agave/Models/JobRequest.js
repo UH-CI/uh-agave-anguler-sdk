@@ -230,9 +230,3 @@ JobRequest.prototype.getMaxRunTime = function () {
 JobRequest.prototype.setMaxRunTime = function (value) {
     this.maxRunTime = value;
 }
-     
-
-
-
-
-

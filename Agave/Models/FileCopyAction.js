@@ -45,9 +45,3 @@ FileCopyAction.prototype.isAppend = function () {
 FileCopyAction.prototype.setAppend = function (append) {
     this.append = append;
 }
-     
-
-
-
-
-

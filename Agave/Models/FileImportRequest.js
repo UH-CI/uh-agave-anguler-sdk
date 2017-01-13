@@ -94,9 +94,3 @@ FileImportRequest.prototype.getUrlToImport = function () {
 FileImportRequest.prototype.setUrlToImport = function (value) {
     this.urlToImport = value;
 }
-     
-
-
-
-
-

@@ -31,8 +31,3 @@ FileMoveAction.prototype.constructor = FileMoveAction;
 FileAction.prototype.setPath = function (value) {
     this.path = value;
 }
-
-
-
-
-

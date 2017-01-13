@@ -26,9 +26,3 @@ JobAction.prototype.getAction = function () {
 JobAction.prototype.setAction = function (value) {
     this.action = value;
 }
-     
-
-
-
-
-

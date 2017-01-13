@@ -111,9 +111,3 @@ PermissionModel.prototype.getId = function () {
 PermissionModel.prototype.setId = function (value) {
     this.id = value;
 }
-     
-
-
-
-
-

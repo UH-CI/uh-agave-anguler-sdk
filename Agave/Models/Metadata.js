@@ -145,9 +145,3 @@ Metadata.prototype.getValue = function () {
 Metadata.prototype.setValue = function (value) {
     this.value = value;
 }
-     
-
-
-
-
-

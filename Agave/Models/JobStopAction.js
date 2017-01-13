@@ -29,9 +29,3 @@ JobStopAction.prototype.getAction = function () {
 JobStopAction.prototype.setAction = function (value) {
     this.action = value;
 }
-     
-
-
-
-
-

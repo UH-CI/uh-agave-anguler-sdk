@@ -21,4 +21,3 @@ function HttpRequest() {
     this.formData = null;
     this.form = null;
 }
-

@@ -60,9 +60,3 @@ NotificationRequest.prototype.getPersistent = function () {
 NotificationRequest.prototype.setPersistent = function (value) {
     this.persistent = value;
 }
-     
-
-
-
-
-

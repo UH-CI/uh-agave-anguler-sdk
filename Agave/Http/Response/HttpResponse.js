@@ -17,4 +17,3 @@ function HttpResponse() {
     this.headers = null;
 
 }
-

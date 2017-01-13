@@ -111,9 +111,3 @@ MonitoringTaskSummary.prototype.getId = function () {
 MonitoringTaskSummary.prototype.setId = function (value) {
     this.id = value;
 }
-     
-
-
-
-
-

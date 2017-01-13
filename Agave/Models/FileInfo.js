@@ -145,9 +145,3 @@ FileInfo.prototype.getName = function () {
 FileInfo.prototype.setName = function (value) {
     this.name = value;
 }
-     
-
-
-
-
-

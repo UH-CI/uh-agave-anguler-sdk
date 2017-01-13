@@ -109,9 +109,3 @@ HistoryEvent.prototype.getProgress = function () {
 HistoryEvent.prototype.setProgress = function (value) {
     this.progress = value;
 }
-     
-
-
-
-
-

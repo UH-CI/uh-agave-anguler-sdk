@@ -128,6 +128,3 @@ FilePermission.prototype.isRecursive = function () {
 FilePermission.prototype.setRecursive = function (value) {
     this.recursive = value;
 }
-
-
-

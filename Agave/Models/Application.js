@@ -553,9 +553,3 @@ Application.prototype.getVersion = function () {
 Application.prototype.setVersion = function (value) {
     this.version = value;
 }
-     
-
-
-
-
-

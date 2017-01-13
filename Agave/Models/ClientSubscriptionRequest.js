@@ -77,9 +77,3 @@ ClientSubscriptionRequest.prototype.getTier = function () {
 ClientSubscriptionRequest.prototype.setTier = function (value) {
     this.tier = value;
 }
-     
-
-
-
-
-
