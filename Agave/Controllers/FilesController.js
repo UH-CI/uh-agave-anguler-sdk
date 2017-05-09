@@ -572,6 +572,72 @@ angular.module('AgavePlatformScienceAPILib').factory('FilesController', ['$q', '
             return deferred.promise;
         },
         /**
+         * Get a remote directory listing on a specific system.
+         * @param {string} systemId    Required parameter: The unique id of the system on which the data resides.
+         * @param {int|null} limit    Optional parameter: The maximum number of results returned from this query
+         * @param {int|null} offset    Optional parameter: The number of results skipped in the result set returned from this query
+         * @param {string|null} path    Optional parameter: The path of the file relative to the user's default storage location.
+         *
+         * @return {promise<array>}
+         */
+        indexFileItems: function (systemId, path, limit, offset) {
+            //Assign default values
+            limit = limit || 100;
+            offset = offset || 0;
+
+            //prepare query string for API call
+            var baseUri = Configuration.BASEURI;
+            var queryBuilder = baseUri + '/files/v2/index/system/{systemId}/{path}';
+
+            //Process template parameters
+            queryBuilder = APIHelper.appendUrlWithTemplateParameters(queryBuilder, {
+                'systemId': systemId,
+                'path': path
+            });
+
+            //Process query parameters
+            queryBuilder = APIHelper.appendUrlWithQueryParameters(queryBuilder, {
+                'naked': true,
+                'limit': (null !== limit) ? limit : 100,
+                'offset': (null !== offset) ? offset : 0
+            });
+
+            //validate and preprocess url
+            var queryUrl = APIHelper.cleanUrl(queryBuilder);
+
+            //prepare headers
+            var headers = {
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + Configuration.oAuthAccessToken
+            };
+
+            //prepare and invoke the API call request to fetch the response
+            var config = {
+                method: 'GET',
+                queryUrl: queryUrl,
+                headers: headers,
+                cache: false
+            };
+
+            var response = new HttpClient(config);
+
+            //Create promise to return
+            var deferred = $q.defer();
+
+            //process response
+            response.then(function (result) {
+                deferred.resolve(result.body);
+            }, function (result) {
+                deferred.reject(APIHelper.appendContext({
+                    errorMessage: 'HTTP Response Not OK',
+                    errorCode: result.code,
+                    errorResponse: result.message
+                }, result.getContext()));
+            });
+
+            return deferred.promise;
+        },
+        /**
          * Update permissions for a single user on their default storage system.
          * @param {FilePermissionRequest} body    Required parameter: The permission add or update.
          * @param {string|null} path    Optional parameter: The path of the file relative to the user's default storage location.
