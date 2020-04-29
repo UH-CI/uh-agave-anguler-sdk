@@ -700,6 +700,68 @@ angular.module('AgavePlatformScienceAPILib').factory('FilesController', ['$q', '
             return deferred.promise;
         },
         /**
+         * Make a file readable by the public
+         * @param {string|null} path    Required. The path of the file relative to the user's default storage location.
+         * @return {promise<FilePermission>}
+         */
+        updateFileItemPermissionToPublicRead: function (path) {
+            var body = {"username":"public","permission":"READ"};
+            var systemId = "ikewai-annotated-data";
+            //prepare query string for API call
+            var baseUri = Configuration.BASEURI;
+            var queryBuilder = baseUri + '/files/v2/pems/system/{systemId}/{path}';
+
+            //Process template parameters
+            queryBuilder = APIHelper.appendUrlWithTemplateParameters(queryBuilder, {
+                'systemId': systemId,
+                'path': path
+            });
+
+            //Process query parameters
+            queryBuilder = APIHelper.appendUrlWithQueryParameters(queryBuilder, {
+                'naked': true
+            });
+
+            //validate and preprocess url
+            var queryUrl = APIHelper.cleanUrl(queryBuilder);
+            console.log("queryUrl: " + queryUrl);
+            //prepare headers
+            var headers = {
+                'Accept': 'application/json',
+                'Content-type': 'application/json; charset=utf-8',
+                'Authorization': 'Bearer ' + Configuration.oAuthAccessToken
+            };
+            
+            //Remove null values
+            //APIHelper.cleanObject(body);
+
+            //prepare and invoke the API call request to fetch the response
+            var config = {
+                method: 'POST',
+                queryUrl: queryUrl,
+                headers: headers,
+                body: body
+            };
+
+            var response = new HttpClient(config);
+
+            //Create promise to return
+            var deferred = $q.defer();
+
+            //process response
+            response.then(function (result) {
+                deferred.resolve(result.body);
+            }, function (result) {
+                deferred.reject(APIHelper.appendContext({
+                    errorMessage: 'HTTP Response Not OK',
+                    errorCode: result.code,
+                    errorResponse: result.message
+                }, result.getContext()));
+            });
+
+            return deferred.promise;
+        },
+        /**
          * Update permissions for a single user.
          * @param {PermissionRequest} body    Required parameter: The updated permission value
          * @param {string} systemId    Required parameter: The id of the system on which the file resides
